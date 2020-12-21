@@ -15,7 +15,7 @@ librarytest: librarytest.c libmycode.o
 	$(CC) $(CFLAGS) -o $@ $^
 
 runtime_librarytest: librarytest.c
-	$(CC) $(CFLAGS) -o $@ $^ -L. -lmycode
+	$(CC) -L. -Wl,-rpath=. $(CFLAGS) -o $@ $^ -lmycode
 
 clean:
 	rm *.o $(BINS)
