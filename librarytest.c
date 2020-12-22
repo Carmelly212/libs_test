@@ -9,17 +9,16 @@ int main (int argc, char *argv[]) {
     sum = 0;
     int i=0;
     for (i=1; i < argc; i++) {
-        len = strlen(argv[i]);
-        sum = len + sum;
+        len = strlen(argv[i]) + 1; sum += len;
+        sum++;
  }  
-    aggrigated = (char *) malloc(sum + 2 + sizeof(aggrigated));
-    
+    aggrigated = (char *) malloc(sum);
+    // printf("sum of characters with space and=%d\n",sum);
     for (i=1; i < argc; i++) {
         strcat(aggrigated, argv[i]);
         strcat(aggrigated, " ");
  }  
-    
-    
+    // printf("agrigated=%ld\n",strlen(aggrigated));
     if (argc < 2 ){
         printf("Error, string missing\n");
     }
