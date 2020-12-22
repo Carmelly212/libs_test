@@ -12,12 +12,11 @@ int main (int argc, char *argv[]) {
         len = strlen(argv[i]);
         sum = len + sum;
  }  
-    aggrigated = (char *) malloc(sum + 2);
+    aggrigated = (char *) malloc(sum + 2 + sizeof(i));
     
     for (i=1; i < argc; i++) {
-        char * space = " ";
         strcat(aggrigated, argv[i]);
-        strcat(aggrigated, space);
+        strcat(aggrigated, " ");
  }  
     if (argc < 2 ){
         printf("Error, string missing\n");
